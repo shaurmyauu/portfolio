@@ -161,6 +161,37 @@ section {
   overflow: hidden;
 }
 
+.pricing-section {
+  padding: 20px;
+  background-color: #121212;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.price-item {
+  margin-bottom: 50px;
+  padding: 1px;
+  background-color: #1e1e1e;
+  border: 1px solid rgb(22, 19, 19)e1e;
+  border-radius: 40px;
+}
+
+.price-item h4 {
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.price-item p {
+  margin: 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.centered-content {
+  text-align: center;
+}
+
+
 .skill {
   display: block;
   height: 40px;
@@ -536,7 +567,7 @@ section {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-image: url('https://images-ext-1.discordapp.net/external/5n2i9jqTiTgPszgp4cdwU3WtWr9rXsO81SiiKA5YcL8/%3Fsize%3D1024%26format%3Dwebp%26width%3D0%26height%3D204/https/cdn.discordapp.com/avatars/1217948886317138064/73f1b2f8393bd73cbed45f8ad79ac0af.webp?format=webp&width=450&height=450');
+  background-image: url('https://images-ext-1.discordapp.net/external/zg8OCdp_cCGmM5-1pLoYPrvD_YaXgfIDTdv-I7SRLQg/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1217948886317138064/65b02fcf05e611e24be79035d8e7bb9a.webp?format=webp&width=318&height=318');
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -593,6 +624,7 @@ section {
   transform: translateY(-10px);
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
 }
+
 
 .banner {
   height: 100%;
@@ -747,4 +779,111 @@ footer p {
 .social-links img {
   width: 40px;
   height: 40px;
+}
+
+/* Gallery Section */
+.gallery-section {
+  padding: 50px 0;
+  text-align: center;
+  background-color: #121212;
+}
+
+.gallery-section h3 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery-item {
+  width: 500px; /* Container width */
+  height: 200px; /* Container height */
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%; /* Fill the width of the container */
+  height: 100%; /* Fill the height of the container */
+  object-fit: cover; /* Ensure the image covers the container */
+  object-position: center; /* Center the image */
+  border-radius: inherit; /* Rounded corners */
+  image-rendering: -webkit-optimize-contrast; /* Improve rendering in WebKit browsers */
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.lightbox.show {
+  display: block;
+  opacity: 1;
+}
+
+.lightbox-content {
+  margin: 50px auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+  transform: scale(0.8);
+}
+
+.lightbox.show .lightbox-content {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gallery-item {
+    width: 100%;
+    height: auto;
+  }
+
+  .lightbox-content {
+    width: 90%;
+    height: auto;
+  }
 }
